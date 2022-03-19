@@ -10,8 +10,8 @@
 
         protected override void Configuration(Entity ent)
         {
-            ent.Speed = speed;
-            ent.Distance = distance;
+            ent.Speed = Speed;
+            ent.Distance = Distance;
         }
     }
 }
