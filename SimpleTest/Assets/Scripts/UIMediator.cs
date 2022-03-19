@@ -18,7 +18,13 @@ namespace SimpleTest
 
         private void Update()
         {
-            if(string.IsNullOrEmpty(Speed.text) || Speed.text == "-"
+            CheckInputData();
+        }
+
+        private void CheckInputData()
+        {
+            if(string.IsNullOrEmpty(Speed.text) 
+               || Speed.text == "-" 
                || string.IsNullOrEmpty(Distance.text) || Distance.text == "-"
                || string.IsNullOrEmpty(SpawnDelay.text) || SpawnDelay.text == "-")
                 return;
@@ -36,7 +42,7 @@ namespace SimpleTest
                 Distance.text = "0";
          
             var delay = int.Parse(SpawnDelay.text);
-            if (delay > 0 && delay <= 10)
+            if (delay >= 0 && delay <= 10)
                 Spawer.TimeSpawnDelay = delay;
             else
                 SpawnDelay.text = "0";
